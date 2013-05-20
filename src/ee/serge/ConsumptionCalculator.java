@@ -41,7 +41,7 @@ public class ConsumptionCalculator {
                 .calculateMonthlyConsumption(ee.serge.generator.MonthGenerator.getMarch2012()));
     }
 
-    public ConsumptionCalculator() {};
+    private ConsumptionCalculator() {};
 
     /**
      * Prints the daily and nightly electricity consumption of the given month
@@ -67,7 +67,7 @@ public class ConsumptionCalculator {
     /**
      * Is it daytime, taking summer time into account
      */
-    public boolean isDayTime(int year, int monthIndex, int monthDay, int hour) {
+    private boolean isDayTime(int year, int monthIndex, int monthDay, int hour) {
         int weekDay = getWeekDay(year, monthIndex, monthDay);
         if (isWorkDay(weekDay)) {
             if (isSummerTime(year, monthIndex, monthDay)) {
@@ -97,14 +97,14 @@ public class ConsumptionCalculator {
     /**
      * Returns the day in March on which summer time starts
      */
-    public int getSummerTimeStartDate(int year) {
+    private int getSummerTimeStartDate(int year) {
         return getLastSundayOfMonth(year, Month.MARCH);
     }
 
     /**
      * Returns the day in October on which summer time ends
      */
-    public int getSummerTimeEndDate(int year) {
+    private int getSummerTimeEndDate(int year) {
         return getLastSundayOfMonth(year, Month.OCTOBER);
     }
 
@@ -136,7 +136,7 @@ public class ConsumptionCalculator {
      * http://en.wikipedia.org/wiki/Determination_of_the_day_of_the_week#
      * Implementation-dependent_methods_of_Sakamoto.2C_Lachman.2C_Keith_and_Craver
      */
-    public int getWeekDay(int year, int monthIndex, int day) {
+    private int getWeekDay(int year, int monthIndex, int day) {
         if (monthIndex == Month.JANUARY.getIndex() || monthIndex == Month.FEBRUARY.getIndex()) {
             monthIndex += MONTHS_IN_YEAR;
             year -= 1;
