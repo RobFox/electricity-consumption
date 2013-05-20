@@ -143,6 +143,6 @@ public class ConsumptionCalculator {
             year -= 1;
         }
         return (day + 2 * monthIndex + (3 * (monthIndex + 1) / 5) +
-                    year + (year / 4) - (year / 100) + (year / 400)) % DAYS_IN_WEEK + 1;
+                year + (year / 4) - (year / 100) + (year / 400)) % DAYS_IN_WEEK + 1;
     }
 }
