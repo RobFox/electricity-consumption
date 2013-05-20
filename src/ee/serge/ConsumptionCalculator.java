@@ -75,8 +75,9 @@ public class ConsumptionCalculator {
             } else {
                 return hour >= NON_SUMMER_TIME_DAY_HOUR_START_HOUR && hour <= NON_SUMMER_TIME_DAY_HOUR_END_HOUR;
             }
+        } else {
+            return false;
         }
-        return false;
     }
 
     /**
@@ -142,7 +143,6 @@ public class ConsumptionCalculator {
             year -= 1;
         }
         return (day + 2 * monthIndex + (3 * (monthIndex + 1) / 5) +
-                year + (year / 4) - (year / 100) + (year / 400)) % DAYS_IN_WEEK + 1;
+                    year + (year / 4) - (year / 100) + (year / 400)) % DAYS_IN_WEEK + 1;
     }
-
 }
